@@ -1,8 +1,4 @@
-<h1> Test </h1>
-<p>
-  <strong>Title:</strong>
-  <%= @test.title %>
-</p>
+<h1> Test <%= @test.title %> </h1>
 
 <p>
   <strong>Level:</strong>
@@ -10,10 +6,14 @@
 </p>
 
 <h2> Questions</h2>
+
+<p>
+  <%= link_to "New Question", new_test_question_path(@test) %>
+</p>
+
 <table>
   <%= render @questions %>
 </table>
-<br>
 
 <%= link_to 'Edit', edit_test_path(@test) %> |
 <%= link_to 'Back', tests_path %>
