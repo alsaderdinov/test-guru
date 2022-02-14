@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 users = User.create!([
-  { name: 'Alexander', email: 'example@mail.com' },
-  { name: 'Angelina', email: 'example1@mail.com' }
+  { name: 'Alexander', email: 'example@gmail.com' },
+  { name: 'Angelina', email: 'exampl@gmail.com' }
 ])
 
 
@@ -19,41 +19,43 @@ categories = Category.create!([
 
 
 tests = Test.create!([
-  { title: 'HTML', level: 0, category_id: categories[0].id, author_id: users[0].id},
-  { title: 'JavaScript', level: 1, category_id: categories[0].id, author_id: users[0].id },
-  { title: 'Go', level: 3, category_id: categories[1].id, author_id: users[1].id },
-  { title: 'Ruby', level: 1, category_id: categories[1].id, author_id: users[1].id }
+  { title: 'HTML', level: 0, category: categories[0], author: users[0]},
+  { title: 'JavaScript', level: 1, category: categories[0], author: users[0] },
+  { title: 'Go', level: 3, category: categories[1], author: users[1] },
+  { title: 'Ruby', level: 1, category: categories[1], author: users[1] }
 ])
 
 
 questions = Question.create!([
-  { body: 'Что такое HTML?', test_id: tests[0].id },
-  { body: 'Где можно использовать JavaScript?', test_id: tests[1].id },
-  { body: 'Сколько ключевых слов в языке Go?', test_id: tests[2].id },
-  { body: 'Как называется самый популярный фреймворк языка Ruby для веба?', test_id: tests[3].id }
+  { body: 'Что такое HTML?', test: tests[0] },
+  { body: 'Где можно использовать JavaScript?', test: tests[1] },
+  { body: 'Сколько ключевых слов в языке Go?', test: tests[2] },
+  { body: 'Как называется самый популярный фреймворк языка Ruby для веба?', test: tests[3] }
 ])
 
 
 Answer.create!([
-  { body: 'Язык разметки документов для просмотра веб-страниц в браузере.', correct: true, question_id: questions[0].id },
-  { body: 'Язык программирования.', correct: false, question_id: questions[0].id },
-  { body: 'Фреймворк.', correct: false, question_id: questions[0].id },
-  { body: 'Прикладное программное обеспечение', correct: false, question_id: questions[1].id },
-  { body: 'Веб-приложения', correct: false, question_id: questions[1].id },
-  { body: 'Мобильные приложения', correct: false, question_id: questions[1].id },
-  { body: 'Серверные приложения', correct: false, question_id: questions[1].id },
-  { body: 'Можно во всех перечисленных', correct: true, question_id: questions[1].id },
-  { body: '25', correct: true, question_id: questions[2].id },
-  { body: '33', correct: false, question_id: questions[2].id },
-  { body: '50', correct: false, question_id: questions[2].id },
-  { body: 'Ruby On Rails', correct: true, question_id: questions[3].id },
-  { body: 'React', correct: false, question_id: questions[3].id },
-  { body: 'Laravel', correct: false, question_id: questions[3].id }
+  { body: 'Язык разметки документов для просмотра веб-страниц в браузере.', correct: true, question: questions[0] },
+  { body: 'Язык программирования.', correct: false, question: questions[0] },
+  { body: 'Фреймворк.', correct: false, question: questions[0] },
+  { body: 'Прикладное программное обеспечение', correct: false, question: questions[1] },
+  { body: 'Веб-приложения', correct: false, question: questions[1] },
+  { body: 'Мобильные приложения', correct: false, question: questions[1] },
+  { body: 'Серверные приложения', correct: false, question: questions[1] },
+  { body: 'Можно во всех перечисленных', correct: true, question: questions[1] },
+  { body: '25', correct: true, question: questions[2] },
+  { body: '33', correct: false, question: questions[2] },
+  { body: '50', correct: false, question: questions[2] },
+  { body: 'Ruby On Rails', correct: true, question: questions[3] },
+  { body: 'React', correct: false, question: questions[3] },
+  { body: 'Laravel', correct: false, question: questions[3] }
 ])
 
+
 TestPassage.create!([
-  { correct_questions: 1, test_id: tests[0].id, user_id: users[0].id },
-  { correct_questions: 2, test_id: tests[1].id, user_id: users[0].id },
-  { correct_questions: 3, test_id: tests[2].id, user_id: users[1].id },
-  { correct_questions: 4, test_id: tests[3].id, user_id: users[1].id }
+  { correct_questions: 1, test: tests[0], user: users[0] },
+  { correct_questions: 1, test: tests[1], user: users[0] },
+  { correct_questions: 1, test: tests[2], user: users[1] },
+  { correct_questions: 1, test: tests[3], user: users[1] }
 ])
+
