@@ -38,7 +38,6 @@ Answer.create!([
   { body: 'Язык разметки документов для просмотра веб-страниц в браузере.', correct: true, question: questions[0] },
   { body: 'Язык программирования.', correct: false, question: questions[0] },
   { body: 'Фреймворк.', correct: false, question: questions[0] },
-  { body: 'Прикладное программное обеспечение', correct: false, question: questions[1] },
   { body: 'Веб-приложения', correct: false, question: questions[1] },
   { body: 'Мобильные приложения', correct: false, question: questions[1] },
   { body: 'Серверные приложения', correct: false, question: questions[1] },
