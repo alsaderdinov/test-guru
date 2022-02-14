@@ -2,7 +2,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy]
 
   def index
-    @test = Test.all
+    @tests = Test.all
   end
 
   def show
