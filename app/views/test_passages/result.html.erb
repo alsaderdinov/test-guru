@@ -1,0 +1,10 @@
+<h1>The <%= @test_passage.test.title %> Test Was Finished!</h1>
+
+
+<% if @test_passage.success? %>
+  <h2>Congrats, your score <strong style="color: green"><%= @test_passage.final_score %></strong></h2>
+<% else %>
+  <h2>Try again, your score <strong style="color: red"><%= @test_passage.final_score %></strong></h2>
+<% end %>
+<%= link_to "Back", tests_path %>
+
