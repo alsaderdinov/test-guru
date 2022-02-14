@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 users = User.create!([
-  { name: 'Alexander' },
-  { name: 'Angelina' }
+  { name: 'Alexander', email: 'example@mail.com' },
+  { name: 'Angelina', email: 'example1@mail.com' }
 ])
 
 
@@ -51,3 +51,9 @@ Answer.create!([
   { body: 'Laravel', correct: false, question_id: questions[3].id }
 ])
 
+TestPassage.create!([
+  { correct_questions: 1, test_id: tests[0].id, user_id: users[0].id },
+  { correct_questions: 2, test_id: tests[1].id, user_id: users[0].id },
+  { correct_questions: 3, test_id: tests[2].id, user_id: users[1].id },
+  { correct_questions: 4, test_id: tests[3].id, user_id: users[1].id }
+])
