@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
 
   validates :name, presence: true
+  validates :surname, presence: true
 
   def tests_by_level(level)
     tests.where(level: level)
@@ -19,5 +20,9 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  def admin?
+    is_a?(Admin)
   end
 end

@@ -8,13 +8,12 @@
 <h2> Questions</h2>
 
 <p>
-  <%= link_to "New Question", new_test_question_path(@test) %>
+  <%= link_to "New Question", new_admin_test_question_path(@test) %>
 </p>
 
 <table>
   <%= render @questions %>
 </table>
 
-<%= link_to 'Edit', edit_test_path(@test) %> |
-<%= link_to 'Back', tests_path %>
-
+<%= link_to 'Edit', edit_admin_test_path(@test) %> |
+<%= link_to 'Back', admin_tests_path %>
