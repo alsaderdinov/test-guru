@@ -1,5 +1,4 @@
 class TestsController < ApplicationController
-
   before_action :authenticate_user!
   before_action :find_test, only: %i[show edit update destroy start]
 
@@ -46,7 +45,7 @@ class TestsController < ApplicationController
     redirect_to current_user.test_passage(@test)
   end
 
-private
+  private
 
   def find_test
     @test = Test.find(params[:id])
@@ -60,4 +59,3 @@ private
     params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 end
-

@@ -12,4 +12,3 @@ class Answer < ApplicationRecord
     errors.add(:base, 'Answers must be <= 4') if question.answers.count >= 4
   end
 end
-

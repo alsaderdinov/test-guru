@@ -26,4 +26,3 @@ class Test < ApplicationRecord
     questions.size
   end
 end
-
