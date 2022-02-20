@@ -50,4 +50,3 @@ class TestPassage < ApplicationRecord
     end
   end
 end
-
