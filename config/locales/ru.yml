@@ -1,2 +1,4 @@
 ru:
-  hello: 'Привет'
+  gist_question_service:
+    gist_params:
+      description: "Вопрос %{title} TestGuru"

@@ -30,4 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  gist_question_serivce:
+    gist_params:
+      description: "A Question about %{title} from TestGuru"
