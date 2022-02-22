@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
+  resources :gists, only: :create
+
   namespace :admin do
     root 'tests#index'
     resources :tests do

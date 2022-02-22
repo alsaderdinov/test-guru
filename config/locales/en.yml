@@ -33,3 +33,9 @@ en:
   gist_question_serivce:
     gist_params:
       description: "A Question about %{title} from TestGuru"
+
+  gists:
+    create:
+      success: "Gist was successfully created! <a href='%{url}' target='_blank'>Gist</a>"
+      failure: 'An error occurred while saving gist'
+
