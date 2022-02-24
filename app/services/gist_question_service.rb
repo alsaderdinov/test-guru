@@ -5,8 +5,11 @@ class GistQuestionService
     @client = client
   end
 
+  Result = Struct.new(:success?, :html_url)
+
   def call
-    @client.create_gist(gist_params)
+    resp = @client.create_gist(gist_params)
+    Result.new(resp.html_url.present?, resp.html_url)
   end
 
   private
@@ -23,12 +26,10 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 
   def default_client
-    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+    Octokit::Client.new(access_token: ENV.fetch('GITHUB_ACCESS_TOKEN'))
   end
 end
