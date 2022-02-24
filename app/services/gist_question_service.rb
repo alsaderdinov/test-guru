@@ -1,11 +1,11 @@
 class GistQuestionService
+  Result = Struct.new(:success?, :html_url)
+
   def initialize(question, client = default_client)
     @question = question
     @test = @question.test
     @client = client
   end
-
-  Result = Struct.new(:success?, :html_url)
 
   def call
     resp = @client.create_gist(gist_params)
