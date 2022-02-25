@@ -30,12 +30,17 @@ gem 'jbuilder', '~> 2.7'
 # AUTH
 gem 'devise', '~> 4.2'
 
+# Github API Client
+gem 'octokit', '~> 4.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Shim to load environment variables from .env into ENV in development.
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -57,4 +62,3 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-

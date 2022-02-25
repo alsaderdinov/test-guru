@@ -1,2 +1,10 @@
 ru:
-  hello: 'Привет'
+  gist_question_service:
+    gist_params:
+      description: "Вопрос по %{title} от TestGuru"
+
+  gists:
+    create:
+      success: "Gist успешно сохранён! <a href='%{url}' target='_blank'>Gist</a>"
+      failure: 'Во время сохранения gist произошла ошибка'
+

@@ -14,8 +14,11 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
+  resources :gists, only: :create
+
   namespace :admin do
     root 'tests#index'
+    resources :gists, only: :index
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index

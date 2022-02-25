@@ -35,6 +35,9 @@
 # Ingore database.yml for hide login and password.
 /config/database.yml
 
+# Ignore the secure variables, tokens, e.t.c
+/.env
+
 /public/packs
 /public/packs-test
 /node_modules
