@@ -33,6 +33,11 @@ gem 'devise', '~> 4.2'
 # Github API Client
 gem 'octokit', '~> 4.0'
 
+# UI
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'jquery-rails', '~> 4.4'
+gem 'octicons_helper', '~> 16.1', '>= 16.1.1'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
