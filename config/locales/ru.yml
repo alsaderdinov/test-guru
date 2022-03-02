@@ -3,8 +3,12 @@ ru:
     gist_params:
       description: "Вопрос по %{title} от TestGuru"
 
+  admin:
+    tests:
+      form_inline:
+        submit: 'OK'
+
   gists:
     create:
       success: "Gist успешно сохранён! <a href='%{url}' target='_blank'>Gist</a>"
       failure: 'Во время сохранения gist произошла ошибка'
-
