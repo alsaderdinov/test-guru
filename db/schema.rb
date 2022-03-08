@@ -27,9 +27,10 @@ ActiveRecord::Schema.define(version: 2022_03_07_094935) do
   create_table "badges", force: :cascade do |t|
     t.string "name"
     t.string "img_url"
-    t.string "rule"
+    t.integer "rule"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["rule"], name: "index_badges_on_rule"
   end
 
   create_table "categories", force: :cascade do |t|

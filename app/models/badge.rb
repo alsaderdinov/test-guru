@@ -4,6 +4,6 @@ class Badge < ApplicationRecord
 
   validates :name, :img_url, :rule, presence: :true 
 
-  enum rule: %i[success_backend_category success_first_try success_by_level]
+  enum rule: %i[success_all_categories success_first_try success_by_level]
 end
 
