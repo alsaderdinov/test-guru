@@ -1,0 +1,24 @@
+<h1>Badges</h1>
+
+<p>
+  <%= link_to "New Badge", new_admin_badge_path %>
+</p>
+
+<%= render 'shared/errors', resource: @badge  %>
+
+<table class="table">
+  <tr>
+    <th class="sort-by-title pointer" >
+      Name
+    <%= octicon 'arrow-up', class: 'text-success hide' %>
+    <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
+    <th>Rule</th>
+    <th>Image</th>
+    <th coslpan="3">Actions</th>
+  </tr>
+  
+  <%= render @badges %>
+
+</table>
+

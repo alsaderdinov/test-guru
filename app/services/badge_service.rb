@@ -8,6 +8,7 @@ class BadgeService
 
   def give_badge
     return [] unless @test_passage.success?
+
     Badge.select { |badge| send("#{badge.rule}?", badge) }
   end
 

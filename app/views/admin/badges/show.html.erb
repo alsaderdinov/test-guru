@@ -1,0 +1,16 @@
+<h2><%= @badge.name %> Badge</h2>
+
+<p>
+  <b>Badge Rule:</b>
+  <%= @badge.rule %>
+</p>
+
+<p>
+  <b>Badge Image:</b>
+  <%= content_tag :img, nil, src: @badge.img_url, class: 'img-thumbnails' %>
+</p>
+
+<%= link_to "Edit", edit_admin_badge_path %> |
+<%= link_to "Delete", admin_badge_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to "Back", admin_badges_path %> 
+
