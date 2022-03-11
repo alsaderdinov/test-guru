@@ -3,7 +3,7 @@
 
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, id: :badge_name %>
   </p><br>
 
   <p>
@@ -12,8 +12,13 @@
   </p>
 
   <p>
-    <%= form.label :img_url %> <br />
-    <%= form.text_field :img_url %>
+    <%= form.label :rule_param %><br>
+    <%= form.text_field :rule_param, id: :badge_rule_param %>
+  </p>
+
+  <p>
+    <%= form.label :img_url %><br>
+    <%= form.text_field :img_url, id: :badge_image %>
   </p>
 
   <p><%= form.submit %></p>

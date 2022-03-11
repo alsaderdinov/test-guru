@@ -51,8 +51,8 @@ Answer.create!([
                ])
 
 Badge.create!([
-                { name: 'first_try', img_url: 'first_try_img', rule: 1 },
-                { name: 'category', img_url: 'category_img', rule: 0 },
-                { name: 'level', img_url: 'level_img', rule: 2 }
+                { name: 'first_try', img_url: 'first_try_img', rule: 1, rule_param: 'test_param' },
+                { name: 'category', img_url: 'category_img', rule: 0, rule_param: 'test_patam1' },
+                { name: 'level', img_url: 'level_img', rule: 2, rule_param: 'test_param2' }
 ])
 
