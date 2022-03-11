@@ -50,9 +50,9 @@ Answer.create!([
                  { body: 'Laravel', correct: false, question: questions[3] }
                ])
 
-# TestPassage.create!([
-#                       { correct_questions: 1, test: tests[0], user: users[0] },
-#                       { correct_questions: 1, test: tests[1], user: users[0] },
-#                       { correct_questions: 1, test: tests[2], user: users[1] },
-#                       { correct_questions: 1, test: tests[3], user: users[1] }
-#                     ])
+Badge.create!([
+                { name: 'first_try', img_url: 'first_try_img', rule: 1, rule_param: 'test_param' },
+                { name: 'category', img_url: 'category_img', rule: 0, rule_param: 'test_patam1' },
+                { name: 'level', img_url: 'level_img', rule: 2, rule_param: 'test_param2' }
+])
+
