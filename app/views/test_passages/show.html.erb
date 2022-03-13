@@ -16,6 +16,13 @@
     </p>
   <% end %>
 
+  <% if @test_passage.test.timer? %>
+    <%= content_tag :div,
+                    "Lefted Time: #{@test_passage.lefted_time}",
+                    class: 'timer',
+                    data: { lefted_time: @test_passage.lefted_time } %>
+  <% end %>
+
   <div class="progress">
     <%= content_tag :div, class: "progress-bar", data: { total: @test_passage.test.total_questions,
                                                          current: @test_passage.question_position } do %> 
