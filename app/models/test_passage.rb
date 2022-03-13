@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: %i[create update]
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_up?
   end
 
   def success?
@@ -21,11 +21,20 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    total_score
     save!
   end
 
   def question_position
     test.questions.order(:id).where('id <= ?', current_question).size
+  end
+
+  def time_up?
+    (test.timer - (Time.now - created_at)).to_i <= 0
+  end
+
+  def lefted_time
+    test.timer - (Time.now - created_at).to_i if test.timer?
   end
 
   private
@@ -48,5 +57,9 @@ class TestPassage < ApplicationRecord
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  def total_score
+    self.score = final_score
   end
 end

@@ -7,12 +7,14 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages
 
   validates :title, presence: true, uniqueness: { scope: :level }
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :level, :timer, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  before_create :set_timer_in_seconds
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :sort_by_category, lambda { |category| 
+  scope :sort_by_category, lambda { |category|
     joins(:category)
       .where(categories: { title: category })
       .order(title: :desc)
@@ -24,5 +26,11 @@ class Test < ApplicationRecord
 
   def total_questions
     questions.size
+  end
+
+  private
+
+  def set_timer_in_seconds
+    self.timer = timer * 60
   end
 end
